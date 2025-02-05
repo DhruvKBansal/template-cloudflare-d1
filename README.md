@@ -9,22 +9,20 @@
 
 ## Initialise the database(s)
 
-1. [Create a production D1 database.](https://developers.cloudflare.com/d1/get-started/#3-create-a-database)
-2. The starter kit focuses on 2 environments, **development on local machine** and **production on
-   remote machine**. So, create the following files:
+1. Create D1 Database, Cloudflare API Token.
 
-   1. `.env.development`: duplicate `.env.example`, and set the variables to development values.
-   2. `.env.production`: duplicate `.env.example`, and set the variables to production values.
-   3. `wrangler.toml.development`: duplicate `wrangler.toml.example`, and set the variables to
-      development values.
-   4. `wrangler.toml.production`: duplicate `wrangler.toml.example`, and set the variables to
-      production values.
+   [Create a production D1 database.](https://developers.cloudflare.com/d1/get-started/#3-create-a-database)
+   [Create a cloudflare API Token.](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
+   
+   ![img.png](img.png)
 
-3. Install the app's dependencies:
+2. Install the app's dependencies:
 
 ```sh
 pnpm install
 ```
+
+3. Create .env file by copying from .env.example. And update project name, database name, etc in .env, and wrangler.toml file.
 
 4. Generate db migration files (that documents schema changes in an SQL script).
 

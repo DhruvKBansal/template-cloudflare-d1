@@ -5,17 +5,15 @@
   "type": "module",
   "scripts": {
     "db:generate": "drizzle-kit generate",
-    "db:migrate:dev": "wrangler d1 migrations apply nextjs-d1-drizzle-cloudflare-pages --local",
-    "db:migrate:prod": "wrangler d1 migrations apply nextjs-d1-drizzle-cloudflare-pages --remote",
-    "db:studio:dev": "pnpm setup:dev && cross-env DB_LOCAL_PATH=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio --port 3094",
-    "db:studio:prod": "pnpm setup:prod && drizzle-kit studio --port 3098",
+    "db:migrate:dev": "wrangler d1 migrations apply DB --local",
+    "db:migrate:prod": "wrangler d1 migrations apply DB --remote",
+    "db:studio:dev": "cross-env DB_LOCAL_PATH=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio --port 3094",
+    "db:studio:prod": "drizzle-kit studio --port 3098",
     "build": "next build",
-    "setup:dev": "cp .env.development .env && cp .env.development .env.production.local && cp wrangler.toml.development wrangler.toml",
-    "setup:prod": "cp .env.production .env && cp .env.production .env.production.local && cp wrangler.toml.production wrangler.toml",
-    "dev": "pnpm setup:dev && next dev",
+    "dev": "next dev",
     "pages:build": "pnpm next-on-pages",
-    "pages:dev": "pnpm setup:dev && pnpm pages:build && pnpm wrangler pages dev --port=3000",
-    "pages:deploy": "pnpm setup:prod && pnpm pages:build && pnpm wrangler pages deploy"
+    "pages:dev": "pnpm pages:build && pnpm wrangler pages dev --port=3000",
+    "pages:deploy": "pnpm pages:build && pnpm wrangler pages deploy"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.10",
