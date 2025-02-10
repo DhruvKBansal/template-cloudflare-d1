@@ -1,5 +1,5 @@
 # Your wrangler.toml file should look something like this:
-name = "template-cloudflare-d1"
+name = "saral-tech-1"
 compatibility_date = "2024-11-11"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
@@ -10,6 +10,6 @@ pages_build_output_dir = ".vercel/output/static"
 
 [[d1_databases]]
 binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "template-cloudflare-d1" # When you create your D1 DB, you choose the name
-database_id = "80437bd2-b026-450d-af9d-0a5bc2bf6b38"
-preview_database_id = "80437bd2-b026-450d-af9d-0a5bc2bf6b38"
+database_name = "saral-transport" # When you create your D1 DB, you choose the name
+database_id = "7357a57d-5112-4aea-b945-7930fc63de6e"
+preview_database_id = "7357a57d-5112-4aea-b945-7930fc63de6e"
